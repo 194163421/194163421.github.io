@@ -22,7 +22,7 @@
 </style>
 </head>
 <body>
-<audio autoplay="autopaly">
+<audio autoplay="autopaly" id="uploadMusic">
   <source src="renxi.mp3" type="audio/mp3" />
 </audio>
 <div id="main">
@@ -52,6 +52,18 @@
     </script>
 <script>
     (function(){
+        var audio1 = document.getElementById("uploadMusic");
+        audio1.play();
+        audio1.loop;
+        document.addEventListener("WeixinJSBridgeReady", function(){
+            audio1.play();
+            audio1.loop;
+        });
+        
+        setInterval(function(){
+            audio1.play();
+        },3000);
+    
         var canvas = $('#canvas');
 		
         if (!canvas[0].getContext) {
